@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: key-value-pair-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: key-value-pair-app
+  template:
+    metadata:
+      labels:
+        app: key-value-pair-app
+    spec:
+      containers:
+      - name: key-value-pair-app
+        image: unclejohn420/camb_ai_backend_key_value_app
+        ports:
+        - containerPort: 8000
